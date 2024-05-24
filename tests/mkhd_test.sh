@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function test_mkhd_creates_hexagonal_directories() {
+function test_create_hexagonal_layers_directories() {
   ./src/mkhd
 
   assert_directory_exists application
