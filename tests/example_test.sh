@@ -1,5 +1,5 @@
 #!/bin/bash
 
-function test_bashunit_is_working() {
-  assert_equals "bashunit is working" "bashunit is working"
+function test_mkhd_creates_hexagonal_directories() {
+  ./src/mkhd
 }
