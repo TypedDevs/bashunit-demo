@@ -11,3 +11,10 @@ function test_create_hexagonal_layers_directories() {
   assert_directory_exists domain
   assert_directory_exists infrastructure
 }
+
+function test_can_be_executed_consecutively() {
+  ./src/mkhd
+  ./src/mkhd
+
+  assert_successful_code
+}
