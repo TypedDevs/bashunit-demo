@@ -1,5 +1,9 @@
 #!/bin/bash
 
+function tear_down() {
+  rm -rf application domain infrastructure
+}
+
 function test_create_hexagonal_layers_directories() {
   ./src/mkhd
 
