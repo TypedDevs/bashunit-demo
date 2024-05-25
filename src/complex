@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# This is just an example of a possible complex script
+# which might have a lot of logic, conditions... even a curl call!
+
+pr_number=123
+body=$(curl -sSL -H "Authorization: token $GITHUB_TOKEN" -H "$GITHUB_API_HEADER" "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pulls/$pr_number/files?per_page=100")
+additions=$(echo "$body" | jq '.additions')
+
+if [ "$#" -eq 1 ]; then
+    printf "The script received one argument.\n"
+else
+    printf "The script did not receive one argument.\n"
+fi
+
+echo "Total additions in the PR is *$additions*."
