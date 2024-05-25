@@ -11,3 +11,9 @@ function test_complex_output_with_one_arg() {
 
     assert_match_snapshot "$(./src/complex --one-argument)"
 }
+
+function test_complex_output_with_more_than_one_args() {
+    mock curl cat ./tests/fixtures/pull_request_api
+
+    assert_match_snapshot "$(./src/complex --one-argument --second-argument)"
+}
